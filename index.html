@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram Feed</title>
+    <style>
+        /* 🌞 Modo claro */
+        html, body {
+            color: #000000 !important;
+            forced-color-adjust: none !important;
+            -webkit-text-fill-color: inherit !important;
+        }
+
+        /* 🌙 Modo oscuro (Fondo gris claro en vez de negro) */
+        @media (prefers-color-scheme: dark) {
+            html, body {
+                background-color: #ececec !important; /* Gris claro en lugar de negro */
+                color: #000000 !important; /* Mantener texto negro */
+            }
+        }
+
+        /* Estilos generales */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            position: relative;
+            background-color: #FFFFFF; /* Aseguramos que el fondo inicial sea blanco */
+            padding-top: 50px; /* Espacio en la parte superior */
+            
+        }
+
+        footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding-bottom: 20px; /* Ajusta el espacio inferior */
+}
+
+.footer-image {
+    width: 180px; /* Ajusta el tamaño de la imagen */
+    height: auto;
+}
+
+        
+
+        .container {
+            width: 50%;
+            max-width: 800px;
+            text-align: center;
+            position: relative;
+        }
+
+        /* Imagen en la parte superior izquierda */
+        .top-left-image {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            z-index: 1000;
+        }
+
+        /* Tamaño para ordenador */
+        .top-left-image img {
+            width: 45px; /* Modifica el tamaño para ordenador */
+            height: auto;
+            cursor: pointer; /* Aparece como un botón */
+        }
+
+        /* Galería de imágenes */
+        .gallery {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+        .gallery {
+            display: flex;
+            justify-content: center; /* Centra las imágenes */
+            flex-wrap: wrap;
+            gap: 10px; /* Espaciado uniforme */
+        }
+
+        .gallery {
+            display: flex;
+            justify-content: center; /* Asegura que las imágenes estén centradas */
+            flex-wrap: wrap;
+            align-items: center;
+            text-align: center; /* Asegura alineación */
+            gap: 25px; /* Espaciado entre imágenes */
+        }
+
+        .gallery a {
+            display: inline-block; /* Ajusta el tamaño del enlace al de la imagen */
+            text-align: center;
+        }
+
+        .gallery img {
+            display: block; /* Evita márgenes extra */
+            pointer-events: auto; /* Asegura que el clic solo funcione sobre la imagen */
+            margin: auto; /* Centra dentro del contenedor */
+        }
+
+        .gallery a:not(:hover) {
+            pointer-events: none; /* Desactiva clics fuera de la imagen */
+        }
+
+        
+
+        @media (min-width: 769px) {
+    body {
+        padding-bottom: 100px; /* Espacio en la parte inferior SOLO en escritorio */
+    }
+}
+
+        .image-1, .image-2, .image-3, .image-4, .image-5, .image-6, .additional-image {
+            transition: opacity 0.3s;
+        }
+
+
+        .image-1 {
+        position: relative;
+        top: 3px; /* Sube la imagen 20px */
+    }
+
+        .image-2 {
+        position: relative;
+        top: 3px; /* Sube la imagen 20px */
+    }
+
+
+        .image-3 {
+        position: relative;
+        top: 3px; /* Sube la imagen 20px */
+    }
+
+
+        .image-4 {
+        position: relative;
+        top: 9px; /* Sube la imagen 20px */
+    }
+        .image-5 {
+        position: relative;
+        top: 2px; /* Sube la imagen 20px */
+    }
+
+    .image-6 {
+        position: relative;
+        top: 0px; /* Sube la imagen 20px */
+    }
+
+        .image-1 { width: 25%; margin: 10px 10px; }
+        .image-2 { width: 70%; margin: 10px 10px; }
+        .image-3 { width: 65%; margin: 10px 10px; }
+        .image-4 { width: 65%; margin: 10px 10px; }
+        .image-5 { width: 70%; margin: 10px 10px; }
+        .image-6 { width: 60%; margin: 10px 10px; }
+        .additional-image {
+            width: 30%; 
+            margin: 20px 0; 
+        }
+
+        /* Efecto hover de las imágenes (con contenido para desktop) */
+        @media (min-width: 769px) {
+            .image-1:hover { content: url('https://res.cloudinary.com/dbwezmju6/image/upload/v1740229068/OJOOO-01_a6lsjn.png'); }
+            .image-2:hover { content: url('https://res.cloudinary.com/dbwezmju6/image/upload/v1739960971/DIBUJO3_cezklf.png'); }
+            .image-3:hover { content: url('https://res.cloudinary.com/dbwezmju6/image/upload/v1739960971/ILUS2_chjaav.png'); }
+            .image-4:hover { content: url('https://res.cloudinary.com/dbwezmju6/image/upload/v1739960972/MAS2_w6tha9.png'); }
+            .image-5:hover { content: url('https://res.cloudinary.com/dbwezmju6/image/upload/v1740473246/figuras-01_reqrzr.png'); }
+            .image-6:hover { content: url('https://res.cloudinary.com/dbwezmju6/image/upload/v1740048813/tienda2-01-01-01_xu1xcu.png'); }
+        }
+
+        /* Efecto hover común */
+        .gallery img:hover {
+            opacity: 0.7; /* Baja la opacidad al pasar el mouse sobre las imágenes */
+            transform: scale(1.05); /* Agranda un poco la imagen */
+            cursor: pointer; /* Cambia el cursor a mano */
+        }
+
+        /* 📱 Ajustes para móviles */
+        @media (max-width: 768px) {
+    .container { width: 150%; }
+
+    .gallery { 
+        justify-content: center; 
+        gap: 0px; /* Espaciado uniforme */
+        display: flex;
+        flex-direction: column; /* Asegura que las imágenes se apilen */
+        align-items: center; /* Centra las imágenes */
+    }
+
+    /* Aplica el mismo margen a todas las imágenes */
+    .gallery a {
+        margin: 10px    0; /* Espacio uniforme arriba y abajo */
+    }
+
+    .image-1 { width: 30%; }
+    .image-2, .image-3, .image-4 .image-5 .image-6 { width: 70%; }
+    
+    .image-6 { width: 75%; }
+    .additional-image { width: 40%; }
+
+    .lightwidget-widget { 
+        height: 500px; 
+        padding-top: 0px; 
+        margin-bottom: 90px; 
+    }
+
+
+
+            /* Tamaño para móvil */
+            .top-left-image img {
+                width: 30px; /* Modifica el tamaño para móvil */
+                height: auto;
+            }
+
+            /* Evitar que los enlaces se marquen en azul después de hacer clic */
+            a:focus, a:active {
+                outline: none; /* Elimina el borde de enfoque (azul) */
+                text-decoration: none; /* Elimina subrayado si está presente */
+            }
+        }
+
+        /* Eliminar el borde azul al hacer foco en enlaces e imágenes */
+        a:focus, img:focus {
+            outline: none;
+        }
+
+        /* Evitar resaltado al hacer clic en imágenes y enlaces en dispositivos móviles */
+        img, a {
+            -webkit-tap-highlight-color: transparent; /* Safari y Android */
+        }
+    </style>
+    <!-- LightWidget Script -->
+    <script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script>
+    
+    <!-- Script para deshabilitar clic derecho -->
+    <script>
+        document.addEventListener("contextmenu", function(e) {
+            e.preventDefault();
+        }, false);
+    </script>
+
+    <!-- Script para cambiar el color de fondo al hacer clic en el logo -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const colors = ["#FFFFFF", "#2B00FF", "#E20613", "#F9FF00"]; // Azul, Rojo, Amarillo, Blanco
+            let currentIndex = 0; // Índice para controlar el cambio secuencial de colores
+
+            // Aplicar el color blanco al fondo
+            document.body.style.backgroundColor = colors[currentIndex];
+
+            // Función para cambiar el color de fondo cuando se hace clic en el logo
+            document.querySelector(".top-left-image img").addEventListener("click", function() {
+                // Incrementar el índice para cambiar al siguiente color
+                currentIndex = (currentIndex + 1) % colors.length;
+
+                // Aplicar el nuevo color de fondo
+                document.body.style.backgroundColor = colors[currentIndex];
+
+                // Si el fondo es azul o rojo, cambiar las imágenes a blanco
+                if (colors[currentIndex] === "#2B00FF" || colors[currentIndex] === "#E20613") {
+                    document.querySelectorAll(".gallery img").forEach(img => {
+                        img.style.filter = "invert(1)";
+                    });
+                    document.querySelector(".additional-image").style.filter = "invert(1)";
+                } else {
+                    // Si el fondo es amarillo o blanco, mantener las imágenes normales
+                    document.querySelectorAll(".gallery img").forEach(img => {
+                        img.style.filter = "invert(0)";
+                    });
+                    document.querySelector(".additional-image").style.filter = "invert(0)";
+                }
+
+                // Guardar el nuevo color en localStorage
+                localStorage.setItem("lastColor", colors[currentIndex]);
+            });
+        });
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const links = document.querySelectorAll(".gallery a");
+
+            links.forEach(link => {
+                const img = link.querySelector("img");
+
+                link.style.pointerEvents = "none"; // Desactiva clics por defecto
+
+                img.addEventListener("mouseenter", function () {
+                    link.style.pointerEvents = "auto"; // Activa clics cuando el mouse está sobre la imagen
+                });
+
+                img.addEventListener("mouseleave", function () {
+                    link.style.pointerEvents = "none"; // Desactiva clics cuando el mouse sale de la imagen
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <!-- Imagen superior izquierda -->
+    <div class="top-left-image">
+        <img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1740147954/BOTON-01-01_loe4db.png" alt="Logo">
+    </div>
+
+    <div class="container">
+        <!-- Galería de imágenes -->
+        <div class="gallery">
+            <a href="https://drive.google.com/file/d/1JYhZGcLMA1NzSyyoD_C98w8CfZXFzjCy/preview" target="_blank">
+                <img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1740228807/SOTO_LOGO-01_l9kbb7.png" alt="Imagen 1" class="image-1">
+            </a>
+            <a href="https://drive.google.com/file/d/1GQFarPI4sdbRt-BUEvfzwU5lJxPp1CBo/preview" target="_blank">
+                <img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1739960971/DIBUJO_mmistd.png" alt="Imagen 2" class="image-2">
+            </a>
+            <a href="https://drive.google.com/file/d/1ZpQsVpzCcgMZ-QNhgHMT7hG24T5CiDD2/preview" target="_blank">
+                <img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1739960971/ILUS_kxoyto.png" alt="Imagen 3" class="image-3">
+            </a>
+            <a href="https://drive.google.com/file/d/1LuW8jVEb_Ze_b3wFTDdz53ZEAYv3XOD3/preview" target="_blank">
+                <img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1740472396/mas_chingaaaa-01_l5bndp.png" alt="Imagen 4" class="image-4">
+            </a>
+            <a href="https://xavi-soto.github.io/portafolio/" target="_blank">
+                <img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1740472796/dise%C3%B1o_chingaaaaa-01_tpsiex.png" alt="Imagen 5" class="image-5">
+            </a>
+            <a href="https://www.inprnt.com/gallery/sotosolo_/" target="_blank">
+                <img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1740577584/tienda-01_zb4i0l.png" alt="Imagen 6" class="image-6">
+            </a>
+        </div>
+        <img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1739960973/ultimo_nmex4p.png" alt="Imagen adicional" class="additional-image">
+
+        <!-- LightWidget WIDGET -->
+        <iframe src="//lightwidget.com/widgets/a3e8831459f953ecb031f4cb22c74bf8.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="border: none; overflow: hidden; width: 100%;"></iframe>
+    </div>
+    <footer>
+        <img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1740580423/derechos_pie_de_pagina-01_re9gh9.png" alt="Imagen de pie de página" class="footer-image">
+    </footer>
+    
+    
+</body>
+</html>
