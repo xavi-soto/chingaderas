@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>chingaderas</title>
+    
+   <link rel="icon" href="https://res.cloudinary.com/dbwezmju6/image/upload/v1740850127/BOTON-01_bp52xr.png" type="image/png">
+    <style>
+
+        
+        /* 🌞 Modo claro */
+        html, body {
+            color: #000000 !important;
+            forced-color-adjust: none !important;
+            -webkit-text-fill-color: inherit !important;
+            background-color: #f3f3f3; /* Fondo blanco por defecto */
+        }
+
+        /* 🌙 Modo oscuro (Fondo gris claro en vez de negro) */
+        @media (prefers-color-scheme: dark) {
+            html, body {
+                background-color: #f3f3f3 !important; /* Gris claro en lugar de negro */
+                color: #000000 !important; /* Mantener texto negro */
+            }
+        }
+
+        /* Estilos generales */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 130vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            position: relative;
+            padding-top: 10px; /* Espacio en la parte superior */
+            padding-bottom: 10px;
+        }
+
+       
+    footer {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background-color: #f3f3f3; /* Asegura que tenga el mismo fondo */
+        text-align: center;
+        padding: 10px 0;
+        z-index: 1000; /* Se mantiene por encima de otros elementos */
+    }
+
+
+
+        .footer-image {
+            width: 160px; /* Ajusta el tamaño de la imagen */
+            height: auto;
+            padding-top: 1px;
+            margin-top: -1px;
+            animation: mostrarImagenes 3s ease forwards;
+        }
+
+        .container {
+            width: 50%;
+            max-width: 800px;
+            text-align: center;
+            position: relative;
+        }
+
+        /* Galería de imágenes */
+        .gallery {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .gallery {
+            display: flex;
+            justify-content: center; /* Centra las imágenes */
+            flex-wrap: wrap;
+            gap: 10px; /* Espaciado uniforme */
+        }
+
+
+        .gallery {
+            display: flex;
+            justify-content: center; /* Asegura que las imágenes estén centradas */
+            flex-wrap: wrap;
+            align-items: center;
+            text-align: center; /* Asegura alineación */
+            gap: 25px; /* Espaciado entre imágenes */
+        }
+
+
+
+        .gallery a {
+            display: inline-block;
+            text-align: center;
+        }
+
+        .gallery img {
+            display: block;
+            pointer-events: auto;
+            margin: auto;
+        }
+
+
+        .gallery a:not(:hover) {
+            pointer-events: none;
+        }
+
+        @media (min-width: 769px) {
+            body {
+                padding-bottom: 100px;
+            }
+        }
+
+        .image-1, .image-2, .image-3, .image-4, .image-5, .image-6, .additional-image {
+            transition: opacity 0.3s;
+        }
+
+
+
+
+        .image-1 {
+        position: relative;
+        top: 10px; /* Sube la imagen 20px */
+    }
+
+        .image-2 {
+        position: relative;
+        top: 3px; /* Sube la imagen 20px */
+    }
+
+
+        .image-3 {
+        position: relative;
+        top: 3px; /* Sube la imagen 20px */
+    }
+
+
+        .image-4 {
+        position: relative;
+        top: 11px; /* Sube la imagen 20px */
+    }
+        .image-5 {
+        position: relative;
+        top: 2px; /* Sube la imagen 20px */
+    }
+
+    .image-6 {
+        position: relative;
+        top: 0px; /* Sube la imagen 20px */
+    }
+
+    .image-7 {
+        position: relative;
+        top: 25px; /* Sube la imagen 20px */
+    }
+
+   
+
+
+
+        .image-1 { width: 25%; margin: 10px 10px; }
+        .image-2 { width: 70%; margin: 10px 10px; }
+        .image-3 { width: 68%; margin: 10px 10px; }
+        .image-4 { width: 65%; margin: 10px 10px; }
+        .image-5 { width: 65%; margin: 10px 10px; }
+        .image-6 { width: 60%; margin: 10px 10px; }
+        .image-7 { width: 30%; margin: 20px 10px; }
+
+
+        /* Efecto hover */
+        .gallery img:hover {
+            opacity: 0.7;
+            transform: scale(1.05);
+            cursor: pointer;
+        }
+
+
+
+
+
+        /* 📱 Ajustes para móviles */
+        @media (max-width: 768px) {
+            .container { width: 100%; }
+            body {
+                min-height: 10px; /* Evita espacio extra */
+        overflow-y: auto; /* Asegura que solo haya scroll si es necesario */
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        padding-top: 2px !important; 
+        margin-top: 10px !important;
+        padding-bottom: 0px;
+    }
+
+
+
+    footer {
+        position: relative;
+        bottom: 1px;
+        margin-top: 17px;
+        padding: 1px 0; /* Reduce espacio vertical */
+    }
+
+    .footer-image {
+        padding-top: 1px; /* Reduce el padding superior */
+        margin-bottom: 10px; /* Evita margen innecesario */
+        width: 140px; /* Ajusta el tamaño si es necesario */
+    }
+        
+
+            .gallery { 
+        justify-content: center; 
+        gap: 0px; /* Espaciado uniforme */
+        display: flex;
+        flex-direction: column; /* Asegura que las imágenes se apilen */
+        align-items: center; /* Centra las imágenes */
+    }    
+/* Animación de aparición suave */
+@keyframes mostrarImagenes {
+                from { opacity: 0; }
+                to { opacity: 1; }
+            }
+
+            .gallery a {
+                margin: 12px 0;
+            }
+
+            .image-1 { width: 30%; }
+            .image-2 { width: 75%; }
+            .image-3 { width: 75%; }
+            .image-4 { width: 70%; }
+            .image-5 { width: 70%; }
+            .image-6 { width: 70%; }
+            .image-7 { width: 35%; top: 10px; }
+            
+
+
+            .gallery img {
+                opacity: 0;
+            }
+
+            .visible {
+                animation: mostrarImagenes 3s ease forwards;
+                opacity: 3;
+            }
+
+
+        }
+
+
+        /* Eliminar el borde azul al hacer foco en enlaces e imágenes */
+        a:focus, img:focus {
+            outline: none;
+        }
+
+        /* Evitar resaltado al hacer clic en imágenes y enlaces en dispositivos móviles */
+        img, a {
+            -webkit-tap-highlight-color: transparent;
+        }
+    </style>
+
+    <!-- Script para deshabilitar clic derecho -->
+    <script>
+        document.addEventListener("contextmenu", function(e) {
+            e.preventDefault();
+        }, false);
+    </script>
+</head>
+<body>
+
+    <!-- Galería de imágenes -->
+    <div class="container">
+        <div class="gallery">
+            <a href="https://drive.google.com/file/d/1JYhZGcLMA1NzSyyoD_C98w8CfZXFzjCy/preview" target="_blank">
+                <img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1740653440/soto_cv_logo-01_aisama.png" alt="Imagen 1" class="image-1">
+            </a>
+            <a href="dibujo.html">
+                <img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1739960971/DIBUJO_mmistd.png" alt="Imagen 2" class="image-2">
+            </a>
+            <a href="ilustracion.html">
+                <img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1739960971/ILUS_kxoyto.png" alt="Imagen 3" class="image-3">
+            </a>
+            <a href="maschingaderas.html">
+                <img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1740652700/chingaderas_mas_logo-01_qtvhsx.png" alt="Imagen 4" class="image-4">
+            </a>
+            <a href="https://xavi-soto.github.io/portafolio/" target="_blank">
+                <img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1740472796/dise%C3%B1o_chingaaaaa-01_tpsiex.png" alt="Imagen 5" class="image-5">
+            </a>
+            <a href="https://www.inprnt.com/gallery/sotosolo_/" target="_blank">
+                <img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1740577584/tienda-01_zb4i0l.png" alt="Imagen 6" class="image-6">
+            </a>
+        
+            <a href="contacto.html">
+                <img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1740768272/contacto_final_final-01_a6lnha.png" alt="Imagen 7" class="image-7">
+            </a>
+
+        
+        
+    </div>
+        
+      
+        
+    </div>
+</div>
+
+
+    <footer>
+        <img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1740580423/derechos_pie_de_pagina-01_re9gh9.png" alt="Imagen de pie de página" class="footer-image">
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const links = document.querySelectorAll(".gallery a");
+
+            links.forEach(link => {
+                const img = link.querySelector("img");
+
+                img.addEventListener("mouseenter", () => {
+                    link.style.pointerEvents = "auto";
+                });
+
+                img.addEventListener("mouseleave", () => {
+                    link.style.pointerEvents = "none";
+                });
+
+                // Asegurar que al inicio los enlaces no sean clickeables
+                link.style.pointerEvents = "none";
+            });
+        });
+    </script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const links = document.querySelectorAll(".gallery a");
+        const images = document.querySelectorAll(".gallery img");
+
+        // Hacer que los enlaces sean clickeables en móviles
+        if (window.innerWidth <= 768) {
+            links.forEach(link => {
+                link.style.pointerEvents = "auto";
+            });
+        } else {
+            // En escritorio, manejar hover para habilitar/deshabilitar clicks
+            links.forEach(link => {
+                const img = link.querySelector("img");
+
+                img.addEventListener("mouseenter", () => {
+                    link.style.pointerEvents = "auto";
+                });
+
+                img.addEventListener("mouseleave", () => {
+                    link.style.pointerEvents = "none";
+                });
+
+                // Inicialmente desactivar los enlaces en escritorio
+                link.style.pointerEvents = "none";
+            });
+        }
+
+        // Agregar la animación a las imágenes en móviles
+        images.forEach(img => {
+            img.classList.add("visible"); // Aplica la animación en móviles
+        });
+    });
+</script>
+
+
+
+</body>
+</html>
